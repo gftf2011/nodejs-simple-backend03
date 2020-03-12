@@ -1,10 +1,14 @@
 {
   "name": "nodejs-simple-backend03",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/server.js",
   "repository": "https://github.com/gftf2011/nodejs-simple-backend03.git",
   "author": "Gabriel Ferrari Tarallo Ferraz <gftf2011@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ./src/server.js",
+    "debug": "nodemon --inspect ./src/server"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
