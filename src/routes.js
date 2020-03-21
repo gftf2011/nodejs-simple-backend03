@@ -1,9 +1,32 @@
 import { Router } from "express";
 
+import UserController from "./app/controllers/UserController";
+
+import {
+  nameExists,
+  emailExists,
+  oldPasswordExists,
+  passwordExists
+} from "./app/middlewares/userMiddleware";
+
 const routes = new Router();
 
-routes.get("/", (req, res) => {
-  res.status(200).send({ message: "Olá Mundo!" });
+routes.get("/user", (req, res) => {
+  UserController.list(req, res);
 });
+
+routes.post("/user", nameExists, emailExists, passwordExists, (req, res) => {
+  UserController.store(req, res);
+});
+
+routes.put(
+  "/user",
+  emailExists,
+  passwordExists,
+  oldPasswordExists,
+  (req, res) => {
+    UserController.update(req, res);
+  }
+);
 
 export default routes;
