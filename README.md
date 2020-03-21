@@ -22,9 +22,7 @@
 >  Port: 5432 <br />
 >  Username: postgres <br />
 >  Password: docker
-
 >  -  Instale usando o Docker :whale:
-
 >  1.  Instale o Docker em https://www.docker.com/products/docker-desktop
 >  2.  Abra o terminal do Docker e digite o comando:
 >      ```bash
