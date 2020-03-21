@@ -17,13 +17,13 @@
 
 3. Instale o postgresql de acordo com sua preferência:
 
--  Instale o postgres diretamente em [https://www.postgresql.org/download/](https://www.postgresql.org/download/)
+>  -  Instale o postgres diretamente em [https://www.postgresql.org/download/](https://www.postgresql.org/download/)
 >  #### OBS.: Garanta que os seguintes atributos tenham os seguintes atributos:
 >  Port: 5432 <br />
 >  Username: postgres <br />
 >  Password: docker
 
--  Instale usando o Docker :whale:
+>  -  Instale usando o Docker :whale:
 
 >  1.  Instale o Docker em https://www.docker.com/products/docker-desktop
 >  2.  Abra o terminal do Docker e digite o comando:
@@ -42,18 +42,18 @@
   -  Username: postgres
   -  Password: docker
   
-#### OBS.: Caso seja necessário altere o host dentro da pasta *src/config/database.js* para localhost ou IPV4 dado pelo seu docker se utilizar um ambiente virtualizado!
-```javascript
-module.exports = {
-  dialect: "postgres",
-  host: "127.0.0.1", //IP given by your docker machine OR your localhost
-  username: "postgres",
-  password: "docker",
-  database: "users_database",
-  define: {
-    timestamps: true,
-    underscored: true,
-    underscoredAll: true
-  }
-};
-```
+>  #### OBS.: Caso seja necessário altere o host dentro da pasta *src/config/database.js* para localhost ou IPV4 dado pelo seu docker se utilizar um ambiente virtualizado!
+>  ```javascript
+>  module.exports = {
+>    dialect: "postgres",
+>    host: "127.0.0.1", //IP given by your docker machine OR your localhost
+>    username: "postgres",
+>    password: "docker",
+>    database: "users_database",
+>    define: {
+>      timestamps: true,
+>      underscored: true,
+>      underscoredAll: true
+>    }
+>  };
+>  ```
