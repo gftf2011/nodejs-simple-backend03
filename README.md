@@ -113,3 +113,29 @@ yarn dev
 >  ```bash
 >  docker stop database
 >  ```
+
+### :airplane: Rotas da aplicação
+
+- `GET /user`: Rota que lista todos os usuários;
+- `POST /user`: Rota cadastra um novo usuário no banco de dados. No corpo da requisição deve ser informado um JSON no seguint formato:
+```javascript
+{
+  name: "Gabriel",
+  email: "example@gmail.com",
+  password: "123456"
+}
+```
+- `PUT /user`: Rota altera a senha do usuário no banco de dados. No corpo da requisição de ser informado um JSON no seguinte formato:
+```javascript
+{
+  email: "example@gmail.com",
+  old_password: "123456",
+  password: "1234567"
+}
+```
+- `DELETE /user`: A rota deleta o usuário com o email específico. No corpo da requisição de ser informado um JSON no seguinte formato:
+```javascript
+{
+  email: "example@gmail.com",
+}
+```
