@@ -44,6 +44,22 @@ class UserController {
 
     return res.status(200).json(newUser);
   }
+
+  async remove(req, res) {
+    const { email } = req.body;
+
+    const user = await User.findOne({ where: { email } });
+
+    if (!user) {
+      return res
+        .status(400)
+        .json({ error: `Email: ${email} does not exists!` });
+    }
+
+    await user.destroy({ where: { email } });
+
+    return res.status(200).json(user);
+  }
 }
 
 export default new UserController();

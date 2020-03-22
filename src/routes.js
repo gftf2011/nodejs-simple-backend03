@@ -29,4 +29,8 @@ routes.put(
   }
 );
 
+routes.delete("/user", emailExists, (req, res) => {
+  UserController.remove(req, res);
+});
+
 export default routes;
