@@ -12,11 +12,8 @@
 ### :ferris_wheel: Para rodar a Aplicação
   
 1.  Instale o node.js em [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
-
 2.  Instale o YARN em [https://classic.yarnpkg.com/en/docs/install/](https://classic.yarnpkg.com/en/docs/install/)
-
 3. Instale o postgresql de acordo com sua preferência:
-
 >  -  Instale o postgres diretamente em [https://www.postgresql.org/download/](https://www.postgresql.org/download/)
 >  #### OBS.: Garanta que os seguintes atributos tenham os seguintes atributos:
 >  Port: 5432 <br />
@@ -33,13 +30,11 @@
 >      docker start database
 >      ```
 4.  Instale o Postbird em [https://github.com/Paxa/postbird/releases](https://github.com/Paxa/postbird/releases)
-
 5.  Conecte-se ao Postbird com as informações:
   -  Host: 127.0.0.1
   -  Port: 5432
   -  Username: postgres
   -  Password: docker
-  
 >  #### OBS.: Caso seja necessário altere o host dentro da pasta *src/config/database.js* para localhost ou IPV4 dado pelo seu docker se utilizar um ambiente virtualizado!
 >  ```javascript
 >  module.exports = {
@@ -55,7 +50,6 @@
 >    }
 >  };
 >  ```
-
 6.  Na pasta do projeto rode o comando:
 ```bash
 yarn create-migration
@@ -107,3 +101,15 @@ module.exports = {
 ```bash
 yarn create-table
 ```
+9.  Rode por último o comando para subir :rocket: sua aplicação:
+```bash
+yarn dev
+```
+>  -  Caso esteja rodando o projeto via docker utilize o comando:
+>  ```bash
+>  docker start database
+>  ```
+>  #### OBS.: para parar a execução do docker rode o comando:
+>  ```bash
+>  docker stop database
+>  ```
