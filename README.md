@@ -55,3 +55,55 @@
 >    }
 >  };
 >  ```
+
+6.  Na pasta do projeto rode o comando:
+```bash
+yarn create-migration
+```
+7.  Após rodar o comando da linha acima altere o conteudo dentro de *src/database/migrations/'timestamp'-create-user.js* para:
+```javascript
+"use strict";
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable("users", {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        unique: true,
+        autoIncrement: true,
+        primaryKey: true
+      },
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+      },
+      password_hash: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false
+      }
+    });
+  },
+
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable("users");
+  }
+};
+```
+8.  Em seguida rode o comando:
+```bash
+yarn create-table
+```
